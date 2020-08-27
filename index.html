@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+         *{margin: 0; padding: 0;}
+         body{
+            background: black;
+        }
+        .donghua{
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .donghua ul{
+            width: 4000px;
+            list-style-type: none;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        .donghua ul li{
+            float: left;
+            cursor: pointer;
+        }
+        img{
+            display: block;
+        }
+        .donghua:hover ul{
+            animation-play-state: paused;
+        }
+        button{
+            width: 80px;
+            height: 50px;
+            margin: -25px 0 0 0;
+            background-color: #5104ab;
+            color: #fff;
+            font-family: inherit;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.1s background-color;
+        }
+        .prev{
+            position: absolute;
+            left: 0px;
+            top: 50%;
+        }
+        .next{
+            position: absolute;
+            left: 720px;
+            top: 50%;      
+        }
+        ol{
+            float: left;
+            position: absolute;
+            right: 10px; bottom: 10px;
+            list-style: none;
+        
+        }
+        ol li{
+            
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid #fff;
+            color: #999;
+            background-color: #333;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+           
+            
+        }
+        ol li.current{ border-color: #f60; color: #f60; }
+
+
+
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    
+    <div id="donghua" class="donghua">
+    
+        <ul id="qaq">
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/4.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+        </ul>
+        <button class="prev">prev</button>
+        <button class="next">next</button>
+        <ol id="olList">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        
+    </div>
+    <script src="./js/animate.js"></script>
+    <script>
+
+        let donghua =document.getElementById("donghua");
+        animateMoudle.init(donghua,-3200);
+    </script>
+</body>
+</html>
