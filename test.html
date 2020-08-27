@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>用户评分：9 评分人数 10</p>
+    <p>
+        评分：
+        <img src="images/rank_1.gif" alt="" /><img src="images/rank_2.gif" alt="" /><img src="images/rank_1.gif" alt="" /><img src="images/rank_2.gif" alt="" /><img src="images/rank_1.gif" alt="" /><img src="images/rank_2.gif" alt="" /><img src="images/rank_1.gif" alt="" /><img src="images/rank_2.gif" alt="" /><img src="images/rank_1.gif" alt="" /><img src="images/rank_2.gif" alt="" /><img src="images/rank_3.gif" alt="" /><img src="images/rank_4.gif" alt="" /><img src="images/rank_3.gif" alt="" /><img src="images/rank_4.gif" alt="" /><img src="images/rank_3.gif" alt="" /><img src="images/rank_4.gif" alt="" /><img src="images/rank_3.gif" alt="" /><img src="images/rank_4.gif" alt="" /><img src="images/rank_3.gif" alt="" /><img src="images/rank_4.gif" alt="" />
+    </p>
+    <script>
+        var imgs = document.getElementsByTagName("img");
+      
+        var timer=null;
+        var timer1=null;
+        function f1(){
+           // clearInterval(timer);
+           console.log(imgs.length+"###")
+            for (let i = 0; i <imgs.length; i++) {
+            let str = imgs[i].src;
+            let str1=str.replace("rank_3.gif","rank_1.gif")
+            let str2=str1.replace('rank_4.gif','rank_2.gif')
+            imgs[i].src=str2;      
+        }
+    }
+
+        function f2(){
+           // clearInterval(timer1);
+            for (let k = i = 0;  k < imgs.length; k++) {
+            let str = imgs[k].src;
+            let str1 = str.replace('rank_1.gif','rank_3.gif')
+            var str2 = str1.replace('rank_2.gif','rank_4.gif')
+            imgs[k].src=str2;       
+        }
+    }
+       timer = setInterval(f1,200);
+       timer1 = setInterval(f2,300);
+
+
+        // for (var i = 0; i < imgs.length; i++) {
+        //     imgs[i].index = i;
+        //     imgs[i].addEventListener("mouseover",function(){
+        //         for (let j = 0; j <= this.index; j++) {
+        //             let str = imgs[j].src;
+        //             // console.log(str)
+        //             let str1 = str.replace('rank_3.gif','rank_1.gif')
+        //             let str2 = str1.replace('rank_4.gif','rank_2.gif')
+        //             // console.log(str2)
+        //             imgs[j].src = str2;
+        //         }
+
+        //         for (let k = this.index+1; k < imgs.length; k++) {
+        //             let str = imgs[k].src;
+        //             var str1 = str.replace('rank_1.gif','rank_3.gif')
+        //             var str2 = str1.replace('rank_2.gif','rank_4.gif')
+        //             imgs[k].src = str2;
+        //         }
+        //     })
+        // }
+
+    </script>
+</body>
+</html>
